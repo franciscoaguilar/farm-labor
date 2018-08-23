@@ -1,0 +1,32 @@
+#search{
+  background: #e1e8f0;
+  padding: 15px;
+}
+.input-group{
+  padding: 15px;
+  background: #009688; 
+}
+.form-inline{
+  padding: 10px;
+ background: #9068be;
+}
+.form-inline label{
+  display: flex;
+  justify-content: center;
+}
+.form-inline input{
+  background: #e1e8f0;
+}
+.form-group {
+  background: #6ed3cf;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+}
+td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+}

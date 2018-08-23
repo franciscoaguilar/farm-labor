@@ -9,9 +9,22 @@
 <link js/scripts.js>
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
 <link rel="stylesheet" href="css/styles.css">
+
 </head>
 <body>
-  <form class="form-inline" name="foodform">
+
+
+ <div class="row">
+  <div class="col-lg-6">
+    <div class="input-group">
+      <input id="search" type="text" class="form-control" placeholder="Search for...">
+      <span class="input-group-btn">
+        <button id = "searchButton" class="btn btn-default" type="button">Go!</button>
+      </span>
+    </div><!-- /input-group -->
+  </div><!-- /.col-lg-6 -->
+</div>
+  <form class="form-inline" name="employeeform">
     <div class="form-group">
       <label for="exampleInputName2">Employee Id</label>
       <input type="text" id="idInput" class="form-control" placeholder="Employee Id" value="2">
@@ -22,7 +35,7 @@
     </div>
     <div class="form-group">
       <label for="exampleInputName2">Rate</label>
-      <input type="text" id="rateInput" class="form-control" placeholder="rate" value="56">
+      <input type="text" id="rateInput" class="form-control" placeholder="rate" value="2">
     </div>
 
     <button id="submitbutton" type="button" class="btn btn-default">Submit</button>
@@ -31,6 +44,7 @@
       <input type="text" id="pieceInput" class="form-control" placeholder="piece">
     </div>
     <button id="submitPieceWork" type="button" class="btn btn-default">ADD</button>
+    <button id="submitPieceWorkTotal" type="button" class="btn btn-default">PieceWork</button>
   </form>
 <script src="js/scripts.js"></script>
 </body>

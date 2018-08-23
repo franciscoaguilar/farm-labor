@@ -1,3 +1,4 @@
+let bigAdd = document.getElementById('bigAdd'); 
 class Employee{
   constructor(employeeId, name, date){
     this._employeeId = employeeId;
@@ -70,11 +71,12 @@ console.log(george)
 console.log(george.getPieceWorkTotal(), 'piece work total');
 console.log(george.netPay(), 'netpay');
 
-console.log('duh');
+
 let jaun = new EmployeePieceWork('45','jaun', '06/07', 2)
 jaun.addPieceWork(10);
 jaun.addPieceWork(10);
 jaun.addPieceWork(10);
+console.log(jaun);
 console.log(jaun.netPay(), 'jauns net pay');
 console.log(jaun.netPayArray, 'array');
 let crew = new Employee();
@@ -89,14 +91,43 @@ let id =document.getElementById('idInput');
 let rate = document.getElementById('rateInput');
 let piece = document.getElementById('pieceInput');
 let submitPieceWork = document.getElementById('submitPieceWork');
-let employee = name.value
+let employee =  new employete();
+let submitPieceWorkTotal = document.getElementById('submitPieceWorkTotal')
+let crewPieceWork = [];
+let employees = [];
+let search =document.getElementById('search');
+let searchButton = document.getElementById('searchButton');
+function employete(){
+  return name.value;
+}
 submit.addEventListener('click', function(){
 
 console.log( employee = new EmployeePieceWork(id.value, name.value,'09', rate.value))
+employees.push(employee);
+console.log(employees, 'list of employees');
 
 })
 submitPieceWork.addEventListener('click', function(){
   employee.addPieceWork(parseInt(piece.value));
+  crewPieceWork.push(parseInt(piece.value));
+  console.log(crewPieceWork, 'inside');
   piece.value = "";
-  console.log(employee.getPieceWorkTotal())
+  console.log(employee.getPieceWorkTotal(), 'piece wwork total');
+  console.log(employee.netPay(), 'netpay');
+
+
+})
+  console.log(crewPieceWork, 'array of the crews piece work ');
+submitPieceWorkTotal.addEventListener('click', function(){
+
+  let summedPieceWork = crewPieceWork.reduce((a,b) => a + b, 0);
+  console.log(summedPieceWork, 'crew total piece work ')
+})
+searchButton.addEventListener('click', function(){
+  if (search.value == employee.constructor.name){
+    return console.log('found');
+  }
+  else{
+    console.log('not found');
+  }
 })
