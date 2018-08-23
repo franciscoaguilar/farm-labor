@@ -82,7 +82,21 @@ console.log(jaun.pieceWork);
 console.log(george.pieceWork);
 console.log(jaun.pieceWork.concat(george.pieceWork).reduce((a,b) => a + b, 0), 'crew piece work total ');
 console.log(jaun.netPayArray.concat(george.netPayArray).reduce((a,b) => a + b, 0), 'crew net pay');
+  console.log(jaun.pieceWork.reduce((a,b) => a + b, 0))
 let name = document.getElementById('nameInput');
 let submit = document.getElementById('submitbutton');
 let id =document.getElementById('idInput');
-submit.addEventListener('click', () => console.log(name.value = new EmployeePieceWork(id.value,name.value,'09', 3)))
+let rate = document.getElementById('rateInput');
+let piece = document.getElementById('pieceInput');
+let submitPieceWork = document.getElementById('submitPieceWork');
+let employee = name.value
+submit.addEventListener('click', function(){
+
+console.log( employee = new EmployeePieceWork(id.value, name.value,'09', rate.value))
+
+})
+submitPieceWork.addEventListener('click', function(){
+  employee.addPieceWork(parseInt(piece.value));
+  piece.value = "";
+  console.log(employee.getPieceWorkTotal())
+})
