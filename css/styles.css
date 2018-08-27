@@ -150,7 +150,7 @@ th, tr:first-child td {
   font-size: 27;
 }
 #crewPieceWork{
-  font-size: 27; 
+  font-size: 27;
 }
 
 /* Variables
@@ -198,6 +198,24 @@ th, tr:first-child td {
 }
 .Rtable--6cols > .Rtable-cell {
   width: 16.6%;
+}
+.Rtable--7cols > .Rtable-cell {
+  width: 12.6%;
+}
+.Rtable--8cols > .Rtable-cell {
+  width: 12.6%;
+}
+.Rtable--9cols > .Rtable-cell {
+  width: 12.6%;
+}
+.Rtable--10cols > .Rtable-cell {
+  width: 10.6%;
+}
+.Rtable--11ols > .Rtable-cell {
+  width: 8.6%;
+}
+.Rtable--12cols > .Rtable-cell {
+  width: 6.6%;
 }
 /* Page styling
 ================================== */
