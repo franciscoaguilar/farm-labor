@@ -88,7 +88,7 @@ console.log(jaun.pieceWork.concat(george.pieceWork).reduce((a,b) => a + b, 0), '
 console.log(jaun.netPayArray.concat(george.netPayArray).reduce((a,b) => a + b, 0), 'crew net pay');
   console.log(jaun.pieceWork.reduce((a,b) => a + b, 0))
 let name = document.getElementById('nameInput');
-let submit = document.getElementById('submitbutton');
+let submitEmployee = document.getElementById('submitbutton');
 let employeeId =document.getElementById('idInput');
 let rate = document.getElementById('rateInput');
 let piece = document.getElementById('pieceInput');
@@ -108,12 +108,12 @@ function employete(){
 let content = document.getElementById("content-box");
 
 
-submit.addEventListener('click', function newEmployeesubmit(){
+submitEmployee.addEventListener('click', function newEmployeesubmit(){
+
 console.log( employee = new EmployeePieceWork(employeeId.value, name.value,'09', rate.value))
 employees.push(employee);
 console.log(employees, 'list of employees');
 let id;
-
 let button = document.createElement('button');
 let divHead = document.createElement('div');
 let h3 = document.createElement('h3');
@@ -123,6 +123,7 @@ let p = document.createElement('p');
 button.classList = "Accordion";
 button.setAttribute("role", "tab");
 button.setAttribute("aria-selected", "false");
+button.setAttribute("id", "buttons");
 divHead.classList = "Rtable-cell Rtable-cell--head";
 divs.classList = "Rtable-cell";
 divFoot.classList = "Rtable-cell  Rtable-cell--foot";
@@ -141,28 +142,47 @@ divs.appendChild(employeeIdNow);
 divFoot.appendChild(employeeRate);
 divHead.appendChild(h3);
 h3.appendChild(employeeName);
-
+console.log(document.getElementById('content-box'));
 // display.appendChild(li.appendChild(employeeText));
 // console.log(li);
-show_pieceWork(id);
+// show_pieceWork(id);
 hide_form(id);
+hide_pieceWork(id);
 })
 
+let buttons = document.getElementById('buttons');
+//
+// buttons.addEventListener('click', function(){
+//
+// })
+$(document).on('click', '#buttons', function(){
+  let id;
+  $(this).attr("aria-selected", $(this).attr("aria-selected") !== "true" );
+  show_pieceWork(id);
+  // $(this).on("click", "#.Accordion", function() {
+  //   $(this).attr("aria-selected", $(this).attr("aria-selected") == "true" );
+  //   show_pieceWork(id);
+  // });
 
+});
 
 submitPieceWork.addEventListener('click', function(){
   employee.addPieceWork(parseInt(piece.value));
   crewPieceWork.push(parseInt(piece.value));
   console.log(crewPieceWork, 'inside');
-  piece.value = "";
   let div = document.createElement('div');
-  // content.appendChild(div);
+  div.classList = "Rtable-cell";
 
-  document.getElementById("weekPieceWork").innerHTML = employee.employeePieceWorkTotal()
+  document.createElement('div');
+  // div.innerHTML = employee.pieceWork;
+    div.innerHTML = piece.value;
+   content.appendChild(div);
+   console.log('div');
+
   // div.appendChild(employee.employeePieceWorkTotal);
   console.log(employee.employeePieceWorkTotal(), 'piece wwork total');
   console.log(employee.netPay(), 'netpay');
-
+piece.value = "";
 });
 
 
@@ -247,11 +267,11 @@ function show_pieceWork(id) {
                     $(this).each(function(){ toggleColumns($(this)); });
 
                     $(this).find(".Tab").click( function() {
-                      $(this).attr("aria-selected","true").siblings().attr("aria-selected","false");
+                      $(this).attr("aria-selected","false").siblings().attr("aria-selected","false");
                       toggleColumns( $(this).parents(".Rtable") );
                     });
 
-                    $(this).find(".Accordion").click( function() {
+                    $(this).on("click", "#.Accordion", function() {
                       $(this).attr("aria-selected", $(this).attr("aria-selected") !== "true" );
                       toggleColumns( $(this).parents(".Rtable") );
                     });
@@ -261,3 +281,5 @@ function show_pieceWork(id) {
 
 
                 $(".js-RtableTabs, .js-RtableAccordions").responsiveTable();
+
+console.log(document.getElementById('content-box'));

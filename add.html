@@ -1,6 +1,6 @@
-
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -11,27 +11,30 @@
 
 
 
-<link js/scripts.js>
+  <link js/scripts.js>
   <script type="text/javascript" src="js/script.js"></script>
-<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
-<link rel="stylesheet" href="css/styles.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/styles.css">
 
 
 </head>
+
 <body>
 
 
- <div class="row">
-  <div class="col-lg-6">
-    <div class="input-group">
-      <input id="search" type="text" class="form-control" placeholder="Search for...">
-      <span class="input-group-btn">
+  <div class="row">
+    <div class="col-lg-6">
+      <div class="input-group">
+        <input id="search" type="text" class="form-control" placeholder="Search for...">
+        <span class="input-group-btn">
         <button id = "searchButton" class="btn btn-default" type="button">Go!</button>
       </span>
-    </div><!-- /input-group -->
-  </div><!-- /.col-lg-6 -->
-</div>
-  <form class="form-inline" name="employeeform" id ="form">
+      </div>
+      <!-- /input-group -->
+    </div>
+    <!-- /.col-lg-6 -->
+  </div>
+  <form class="form-inline" name="employeeform" id="form">
     <div class="form-group">
       <label for="exampleInputName2">Employee Id</label>
       <input type="text" id="idInput" class="form-control" placeholder="Employee Id" value="56">
@@ -46,51 +49,61 @@
     </div>
     <button id="submitbutton" type="button" class="btn btn-default">Submit</button>
   </form>
-  <div class="form-group" id = "addpiece"  >
+  <div class="form-group" id="addpiece">
     <label for="exampleInputName2">piece</label>
     <input type="text" id="pieceInput" class="form-control" placeholder="piece">
     <button id="submitPieceWork" type="button" class="btn btn-default">ADD</button>
     <button id="newEmployee" type="button" class="btn btn-default">ADD NEW Employe</button>
   </div>
 
-        <button id="submitPieceWorkTotal" type="button" class="btn btn-default">PieceWork</button>
+  <button id="submitPieceWorkTotal" type="button" class="btn btn-default">PieceWork</button>
 
 
 
-          <div id = "content-box" class="Rtable Rtable--3cols Rtable--collapse js-RtableAccordions">
+  <div id="content-box" class="Rtable Rtable--7cols Rtable--collapse js-RtableAccordions">
 
-            <button class="Accordion" role="tab" aria-selected="false">Jose</button>
-            <div class="Rtable-cell  Rtable-cell--head"><span id="display" >Jose James</h3></div>
-            <div class="Rtable-cell">id: 34</div>
-            <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 9</strong></div>
 
-            <button class="Accordion" role="tab" aria-selected="false">Albert</button>
-            <div class="Rtable-cell  Rtable-cell--head"><h3>Albert Tores</h3></div>
-            <div class="Rtable-cell">id: 45</div>
-            <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 5</strong></div>
 
-            <button class="Accordion" role="tab" aria-selected="false">Ryan</button>
-            <div class="Rtable-cell  Rtable-cell--head"><h3>#27</h3></div>
-            <div class="Rtable-cell">id: 56</div>
+    <button class="Accordion" role="tab" aria-selected="false">Albert</button>
+    <div class="Rtable-cell  Rtable-cell--head">
+      <h3>Albert Tores</h3></div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <!-- <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div>
+    <div class="Rtable-cell">id: 45</div> -->
+    <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 5</strong></div>
 
-            <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div>
+    <!-- <button class="Accordion" role="tab" aria-selected="false">Ryan</button>
+    <div class="Rtable-cell  Rtable-cell--head">
+      <h3>#27</h3></div>
+    <div class="Rtable-cell">id: 56</div>
+    <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div>
 
-          </div>
+    <button class="Accordion" role="tab" aria-selected="false">Ryan</button>
+    <div class="Rtable-cell  Rtable-cell--head">
+      <h3>#27</h3></div>
+    <div class="Rtable-cell">id: 56</div>
+    <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div> -->
 
-          <button id = "crewNetPay" type="button" name="button">Employee Net Pay</button>
-          <div>Employees Net Pay: <span id ="crewNetPayDisplay"</span></div>
-          <div>Employees Current Piece Work:  <span id="weekPieceWork">
+  </div>
+
+  <button id="crewNetPay" type="button" name="button">Employee Net Pay</button>
+  <div>Employees Net Pay: <span id="crewNetPayDisplay" </span></div>
+  <div>Employees Current Piece Work: <span id="weekPieceWork">
             </span></div>
-        <div>Crew Current Piece Work  <span id="crewPieceWork"></span></div>
+  <div>Crew Current Piece Work <span id="crewPieceWork"></span></div>
 
 
-<script src="js/scripts.js"></script>
+  <script src="js/scripts.js"></script>
 
 
-<script
-  src="https://code.jquery.com/jquery-2.1.3.js"
-  integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8="
-  crossorigin="anonymous"></script>
+  <script src="https://code.jquery.com/jquery-2.1.3.js" integrity="sha256-goy7ystDD5xbXSf+kwL4eV6zOPJCEBD1FBiCElIm+U8=" crossorigin="anonymous"></script>
 
 </body>
 
