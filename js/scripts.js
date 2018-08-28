@@ -114,34 +114,117 @@ console.log( employee = new EmployeePieceWork(employeeId.value, name.value,'09',
 employees.push(employee);
 console.log(employees, 'list of employees');
 let id;
+let tableRow = document.createElement('tr');
+let tableCell = document.createElement('td');
 let button = document.createElement('button');
-let divHead = document.createElement('div');
+
 let h3 = document.createElement('h3');
-let divs = document.createElement('div');
-let divFoot = document.createElement('div');
+
 let p = document.createElement('p');
-button.classList = "Accordion";
-button.setAttribute("role", "tab");
-button.setAttribute("aria-selected", "false");
-button.setAttribute("id", "buttons");
-divHead.classList = "Rtable-cell Rtable-cell--head";
-divs.classList = "Rtable-cell";
-divFoot.classList = "Rtable-cell  Rtable-cell--foot";
+let divFname = document.createElement('div');
+let divLname = document.createElement('div');
+let divSun = document.createElement('div');
+let divMon = document.createElement('div');
+let divTues = document.createElement('div');
+let divWed = document.createElement('div');
+let divThur = document.createElement('div');
+let divFri = document.createElement('div');
+let divSat = document.createElement('div');
+let divTotalPieces = document.createElement('div');
+let divRate = document.createElement('div');
+let divNetTotal = document.createElement('div');
+
 let employeeIdNow = document.createTextNode(employee.employeeId);
 let employeeNameButton = document.createTextNode(employee.name);
 let employeeRate = document.createTextNode(employee.rate);
 let employeeName = document.createTextNode(employee.name);
 
-content.appendChild(button);
+// divSun.setAttribute()
+content.appendChild(tableRow);
+
+tableRow.appendChild(divFname);
+divFname.classList = "Rtable-cell Rtable-cell--head row_data";
+divFname.appendChild(h3);
+h3.appendChild(employeeName);
+
+tableRow.appendChild(button);
+button.classList = "Accordion";
+button.setAttribute("role", "tab");
+button.setAttribute("aria-selected", "false");
+button.setAttribute("id", "buttons");
 button.appendChild(p);
 p.appendChild(employeeNameButton);
-content.appendChild(divHead);
-content.appendChild(divs);
-content.appendChild(divFoot);
-divs.appendChild(employeeIdNow);
-divFoot.appendChild(employeeRate);
-divHead.appendChild(h3);
-h3.appendChild(employeeName);
+
+
+tableRow.appendChild(divNetTotal);
+divNetTotal.classList = "Rtable-cell  Rtable-cell--foot";
+
+
+tableRow.appendChild(divSun);
+divSun.setAttribute("edit_type", "click");
+divSun.setAttribute("col_name", 'fname');
+divSun.setAttribute('contenteditable', 'true');
+divSun.classList="Rtable-cell row_data"
+divSun.appendChild(employeeRate);
+
+tableRow.appendChild(divMon);
+divMon.setAttribute("edit_type", "click");
+divMon.setAttribute("col_name", 'fname');
+divMon.setAttribute('contenteditable', 'true');
+divMon.classList="Rtable-cell row_data"
+
+tableRow.appendChild(divTues);
+divTues.setAttribute("edit_type", "click");
+divTues.setAttribute("col_name", 'fname');
+divTues.setAttribute('contenteditable', 'true');
+divTues.classList="Rtable-cell row_data"
+
+tableRow.appendChild(divWed);
+divWed.setAttribute("edit_type", "click");
+divWed.setAttribute("col_name", 'fname');
+divWed.setAttribute('contenteditable', 'true');
+divWed.classList="Rtable-cell row_data"
+
+tableRow.appendChild(divThur);
+divThur.setAttribute("edit_type", "click");
+divThur.setAttribute("col_name", 'date');
+divThur.setAttribute('contenteditable', 'true');
+divThur.classList="Rtable-cell row_data";
+
+tableRow.appendChild(divFri);
+divFri.setAttribute("edit_type", "click");
+divFri.setAttribute("col_name", 'date');
+divFri.setAttribute('contenteditable', 'true');
+divFri.classList="Rtable-cell row_data";
+
+tableRow.appendChild(divSat);
+divSat.setAttribute("edit_type", "click");
+divSat.setAttribute("col_name", 'date');
+divSat.setAttribute('contenteditable', 'true');
+divSat.classList="Rtable-cell row_data";
+
+tableRow.appendChild(divTotalPieces);
+divTotalPieces.setAttribute("edit_type", "click");
+divTotalPieces.setAttribute("col_name", 'date');
+divTotalPieces.setAttribute('contenteditable', 'true');
+divTotalPieces.classList="Rtable-cell row_data";
+
+tableRow.appendChild(divRate);
+divRate.setAttribute("edit_type", "click");
+divRate.setAttribute("col_name", 'date');
+divRate.setAttribute('contenteditable', 'true');
+divRate.classList="Rtable-cell row_data";
+divRate.appendChild(employeeRate);
+
+
+tableRow.appendChild(divNetTotal);
+divNetTotal.setAttribute("edit_type", "click");
+divNetTotal.setAttribute("col_name", 'date');
+divNetTotal.setAttribute('contenteditable', 'true');
+divNetTotal.classList="Rtable-cell row_data";
+
+
+// $div.append(employeeName);
 console.log(document.getElementById('content-box'));
 // display.appendChild(li.appendChild(employeeText));
 // console.log(li);
