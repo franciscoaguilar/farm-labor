@@ -20,6 +20,7 @@ class EmployeePieceWork extends Employee {
     this._pieceWork = [];
     this._rate = rate;
     this._netPayArray = [];
+    this._date = date;
 
   }
   get pieceWork() {
@@ -30,6 +31,9 @@ class EmployeePieceWork extends Employee {
   }
   get netPayArray() {
     return this._netPayArray;
+  }
+  get date(){
+    return this._date;
   }
   // get total(){
   //   return this._total;
@@ -144,8 +148,12 @@ submitEmployee.addEventListener('click', function newEmployeesubmit() {
     div.classList = "Rtable-cell row_data"
     content.appendChild(div);
   }
+
+  //same as get getElementById
  $('#employeeId')[0].append(employeeIdNow);
- $('#name')[0].append(employeeName); 
+ $('#name')[0].append(employeeName);
+ $('#rate')[0].append(employeeRate);
+$('date')[0].
 
 
   hide_form(id);
@@ -168,6 +176,14 @@ $(document).on('click', '#buttons', function() {
   // });
 
 });
+function currentDate (){
+  var todayTime = new Date();
+    var month = todayTime.getMonth() + 1;
+    var day = todayTime.getDate();
+    var year = todayTime.getYear();
+    return month + "/" + day + "/" + year;
+}
+document.getElementById('dateInput').value = currentDate();
 
 addPieceWorkButton.addEventListener('click', function() {
   employee.addPieceWork(parseInt(piece.value));
@@ -182,7 +198,8 @@ addPieceWorkButton.addEventListener('click', function() {
   // content.appendChild(div);
 content.firstElementChild.innerHTML = Date();
   console.log('div');
-content.firstElementChild.innerHTML = piece.value;
+
+// content.firstElementChild.innerHTML = piece.value;
   // date.appendChild(div[1]);
   // div.appendChild(employee.employeePieceWorkTotal);
   console.log(employee.employeePieceWorkTotal(), 'piece wwork total');
