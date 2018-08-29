@@ -197,25 +197,25 @@ th, tr:first-child td {
   width: 20%;
 }
 .Rtable--6cols > .Rtable-cell {
-  width: 16.6%;
+  width: 16.66666667%;
 }
 .Rtable--7cols > .Rtable-cell {
-  width: 12.6%;
+  width: 14.285714%;
 }
 .Rtable--8cols > .Rtable-cell {
-  width: 12.6%;
+  width: 12.5%;
 }
 .Rtable--9cols > .Rtable-cell {
-  width: 12.6%;
+  width: 11.111111%;
 }
 .Rtable--10cols > .Rtable-cell {
-  width: 10.6%;
+  width: 10%;
 }
-.Rtable--11ols > .Rtable-cell {
-  width: 8.6%;
+.Rtable--11cols > .Rtable-cell {
+  width: 9.0909%;
 }
 .Rtable--12cols > .Rtable-cell {
-  width: 6.6%;
+  width: 8.333%;
 }
 /* Page styling
 ================================== */

@@ -12,7 +12,7 @@
 
 
   <link js/scripts.js>
-  <script type="text/javascript" src="js/script.js"></script>
+
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.2.0/css/all.css" integrity="sha384-hWVjflwFxL6sNzntih27bfxkr27PmbbK/iSvJ+a4+0owXq79v+lsFkW54bOGbiDQ" crossorigin="anonymous">
   <link rel="stylesheet" href="css/styles.css">
 
@@ -51,9 +51,11 @@
   </form>
   <div class="form-group" id="addpiece">
     <label for="exampleInputName2">piece</label>
-    <input type="text" id="pieceInput" class="form-control" placeholder="piece">
+    <input type="text" name ="date" id="pieceInput" class="form-control" placeholder="piece">
     <button id="submitPieceWork" type="button" class="btn btn-default">ADD</button>
     <button id="newEmployee" type="button" class="btn btn-default">ADD NEW Employe</button>
+
+
   </div>
 
   <button id="submitPieceWorkTotal" type="button" class="btn btn-default">PieceWork</button>
@@ -63,33 +65,55 @@
   <div id="content-box" class="Rtable Rtable--12cols Rtable--collapse js-RtableAccordions">
 
 
- <tr>
-    <button class="Accordion" role="tab" aria-selected="false">Albert</button>
-  <td>  <div class="Rtable-cell  Rtable-cell--head" contenteditable="true">
-      <h3>Id 34</h3></div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Francisco </div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">day 1</div> <td>
-  <tr>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 2</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 3</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 4</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 5</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 6</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 7</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Total</div> <td>
-  <td>  <div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Rate </div>  <td>
-    <div  class="row_data" edit_type="click" col_name="fname" class="Rtable-cell  Rtable-cell--foot" contenteditable="true"><strong>Net pay</strong></div>
-    <tr>
 
-    <!-- <button class="Accordion" role="tab" aria-selected="false">Ryan</button>
+
+ <!-- <tr>
+    <button class="Accordion" role="tab" aria-selected="false">Albert</button>
+  <div class="Rtable-cell  Rtable-cell--head row_data" contenteditable="true">
+      id 56</div>
+  <td id ="bob" ><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Francisco </div> </td>
+  <td ><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">day 1</div> </td>
+  <tr><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 2</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 3</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 4</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 5</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 6</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Day: 7</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Total</div> </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell row_data" contenteditable="true">Rate </div>  </td>
+  <td><div edit_type="click" col_name="fname" class="Rtable-cell  Rtable-cell--foot row_data" contenteditable="true"><strong>Net pay</strong></div> </td>
+    </tr> -->
+
+    <!-- <button class="Accordion" role="tab" aria-selected="false">Jow</button>
     <div class="Rtable-cell  Rtable-cell--head">
       <h3>#27</h3></div>
     <div class="Rtable-cell">id: 56</div>
+        <div class="Rtable-cell">id: 56</div>
+            <div class="Rtable-cell">id: 56</div>
+                <div class="Rtable-cell">id: 56</div>
+                    <div class="Rtable-cell">id: 56</div>
+                        <div class="Rtable-cell">id: 56</div>
+                            <div class="Rtable-cell">id: 56</div>
+                                <div class="Rtable-cell">id: 56</div>
+                                    <div class="Rtable-cell">id: 56</div>
+                                        <div class="Rtable-cell">id: 56</div>
+
     <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div>
 
     <button class="Accordion" role="tab" aria-selected="false">Ryan</button>
     <div class="Rtable-cell  Rtable-cell--head">
       <h3>#27</h3></div>
     <div class="Rtable-cell">id: 56</div>
+        <div class="Rtable-cell">id: 56</div>
+            <div class="Rtable-cell">id: 56</div>
+                <div class="Rtable-cell">id: 56</div>
+                    <div class="Rtable-cell">id: 56</div>
+                        <div class="Rtable-cell">id: 56</div>
+                            <div class="Rtable-cell">id: 56</div>
+                                <div class="Rtable-cell">id: 56</div>
+                                    <div class="Rtable-cell">id: 56</div>
+                                        <div class="Rtable-cell">id: 56</div>
+
     <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div> -->
 
   </div>
