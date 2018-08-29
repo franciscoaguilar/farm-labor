@@ -115,32 +115,12 @@ submitEmployee.addEventListener('click', function newEmployeesubmit() {
   let tableRow = document.createElement('tr');
   let tableCell = document.createElement('td');
   let button = document.createElement('button');
-
-  let h3 = document.createElement('h3');
-
-  let p = document.createElement('p');
-  let divId = document.createElement('div');
-  let divFname = document.createElement('div');
-  let divLname = document.createElement('div');
-  let divSun = document.createElement('div');
-  let divMon = document.createElement('div');
-  let divTues = document.createElement('div');
-  let divWed = document.createElement('div');
-  let divThur = document.createElement('div');
-  let divFri = document.createElement('div');
-  let divSat = document.createElement('div');
-  let divTotalPieces = document.createElement('div');
-  let divRate = document.createElement('div');
-  let divNetTotal = document.createElement('div');
-
+ let p = document.createElement('p');
   let employeeIdNow = document.createTextNode(employee.employeeId);
   let employeeNameButton = document.createTextNode(employee.name);
   let employeeRate = document.createTextNode(employee.rate);
   let employeeName = document.createTextNode(employee.name);
 
-  // divSun.setAttribute()
-  // content.appendChild(tableRow);
-  // tableRow.appendChild(tableCell);
 
   button.classList = "Accordion";
   button.setAttribute("role", "tab");
@@ -149,30 +129,6 @@ submitEmployee.addEventListener('click', function newEmployeesubmit() {
   button.appendChild(p);
   p.appendChild(employeeNameButton);
 
-  // for (row = 0; row < 1; row++) {
-  //   let row = document.createElement('tr');
-  //   row.appendChild(button);
-  //   for (i = 0; i < 12; i++) {
-  //     let cell = document.createElement('td');
-  //     for (j = 0; j < 1; j++) {
-  //       let div = document.createElement('div');
-  //
-  //       div.setAttribute("edit_type", "click");
-  //       div.setAttribute("col_name", 'fname');
-  //       div.setAttribute('contenteditable', 'true');
-  //       div.classList = "Rtable-cell row_data"
-  //       for (x = 0; x < 1; x++) {
-  //         let h3 = document.createElement('h3');
-  //         div.appendChild(h3);
-  //       }
-  //       cell.appendChild(div);
-  //     }
-  //     row.appendChild(cell);
-  //
-  //   }
-  //   console.log(row);
-  //   content.appendChild(row);
-  // }
 
 
 
@@ -180,101 +136,18 @@ submitEmployee.addEventListener('click', function newEmployeesubmit() {
   for (j = 0; j < 12; j++) {
 
     let div = document.createElement('div');
+    let array = ['employeeId','name','date','date','date','date','date','date','date','total','rate','nettotal'];
     div.setAttribute("edit_type", "click");
-    div.setAttribute("col_name", "Name"[j]);
     div.setAttribute('contenteditable', 'false');
+    div.setAttribute("id", array[j]);
     div.setAttribute("value", 'ape');
     div.classList = "Rtable-cell row_data"
     content.appendChild(div);
   }
-
-  // console.log(content);
-  // console.log('ap');
-  // tableCell.appendChild(divFname);
-  // divFname.classList = "Rtable-cell Rtable-cell--head row_data";
-  // divFname.appendChild(h3);
-  // h3.appendChild(employeeName);
-  //
-  // document.createElement('td').appendChild(divId);
-  // divId.setAttribute("edit_type", "click");
-  // divId.setAttribute("col_name", 'fname');
-  // divId.setAttribute('contenteditable', 'true');
-  // divId.classList="Rtable-cell row_data"
-  // divId.appendChild(employeeIdNow);
-  // console.log(divId);
-  //
-  //
-  //
-  // tableCell.appendChild(divSun);
-  // divSun.setAttribute("edit_type", "click");
-  // divSun.setAttribute("col_name", 'fname');
-  // divSun.setAttribute('contenteditable', 'true');
-  //
-  // divSun.classList="Rtable-cell row_data"
-  // divSun.appendChild(employeeRate);
-  //
-  // tableCell.appendChild(divMon);
-  // divMon.setAttribute("edit_type", "click");
-  // divMon.setAttribute("col_name", 'fname');
-  // divMon.setAttribute('contenteditable', 'true');
-  // divMon.classList="Rtable-cell row_data"
-  //
-  // tableCell.appendChild(divTues);
-  // divTues.setAttribute("edit_type", "click");
-  // divTues.setAttribute("col_name", 'fname');
-  // divTues.setAttribute('contenteditable', 'true');
-  // divTues.classList="Rtable-cell row_data"
-  //
-  // tableCell.appendChild(divWed);
-  // divWed.setAttribute("edit_type", "click");
-  // divWed.setAttribute("col_name", 'fname');
-  // divWed.setAttribute('contenteditable', 'true');
-  // divWed.classList="Rtable-cell row_data"
-  //
-  // tableCell.appendChild(divThur);
-  // divThur.setAttribute("edit_type", "click");
-  // divThur.setAttribute("col_name", 'date');
-  // divThur.setAttribute('contenteditable', 'true');
-  // divThur.classList="Rtable-cell row_data";
-  //
-  // tableCell.appendChild(divFri);
-  // divFri.setAttribute("edit_type", "click");
-  // divFri.setAttribute("col_name", 'date');
-  // divFri.setAttribute('contenteditable', 'true');
-  // divFri.classList="Rtable-cell row_data";
-  //
-  // tableCell.appendChild(divSat);
-  // divSat.setAttribute("edit_type", "click");
-  // divSat.setAttribute("col_name", 'date');
-  // divSat.setAttribute('contenteditable', 'true');
-  // divSat.classList="Rtable-cell row_data";
-  //
-  // tableCell.appendChild(divTotalPieces);
-  // divTotalPieces.setAttribute("edit_type", "click");
-  // divTotalPieces.setAttribute("col_name", 'date');
-  // divTotalPieces.setAttribute('contenteditable', 'true');
-  // divTotalPieces.classList="Rtable-cell row_data";
-  //
-  // tableCell.appendChild(divRate);
-  // divRate.setAttribute("edit_type", "click");
-  // divRate.setAttribute("col_name", 'date');
-  // divRate.setAttribute('contenteditable', 'true');
-  // divRate.classList="Rtable-cell row_data";
-  // divRate.appendChild(employeeRate);
-  //
-  //
-  // tableCell.appendChild(divNetTotal);
-  // divNetTotal.setAttribute("edit_type", "click");
-  // divNetTotal.setAttribute("col_name", 'date');
-  // divNetTotal.setAttribute('contenteditable', 'true');
-  // divNetTotal.classList="Rtable-cell Rtable-cell--foot row_data";
+ $('#employeeId')[0].append(employeeIdNow);
+ $('#name')[0].append(employeeName); 
 
 
-  // $div.append(employeeName);
-  // console.log(document.getElementById('content-box'));
-  // display.appendChild(li.appendChild(employeeText));
-  // console.log(li);
-  // show_pieceWork(id);
   hide_form(id);
   hide_pieceWork(id);
   console.log(content, "inside");
