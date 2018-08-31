@@ -26,124 +26,6 @@
   border-radius: 10px;
     margin-top: 30px
 }
-table {
-    font-family: arial, sans-serif;
-    border-collapse: collapse;
-    width: 100%;
-}
-td, th {
-    border: 1px solid #dddddd;
-    text-align: left;
-    padding: 8px;
-}
-.fa-user-plus{
-  display: flex;
-  justify-content: center;
-font-size: 120px;
-color:#9068be;
-background-color:  #6ed3cf;
-border-radius: 50px;
-box-shadow: 0px 0px 2px #888;
-margin: 20px;
-padding-top: 20px;
-padding-bottom: 20px;
-}
-body {
-  background-color:  #e1e8f0;
-}
-#addpiece{
-  display: none;
-}
-table {
-    background: none;
-    margin-bottom: 1.25em;
-    border: none;
-}
-table thead, table tfoot {
-    font-weight: bold;
-}
-table thead tr th, table thead tr td, table tfoot tr th, table tfoot tr td {
-    padding: 0.5em 0.625em 0.625em;
-    font-size: 1.125em;
-    color: #818181;
-    text-align: left;
-}
-table tr th, table tr td {
-    padding: 1.25em 0.625em;
-    font-size: 1.125em;
-    color: #6e6e6e;
-}
-table thead tr th {
-    text-transform: uppercase;
-}
-table tr {
-    border-bottom: 10px solid #E9E9E9;
-}
-table tbody tr {
-    background: #f9f9f9;
-}
-table tbody tr:first-child {
-    background: none;
-    border-bottom: none;
-}
-table tbody th {
-    text-align: left;
-    font-weight: bold;
-}
-table thead tr th, table tfoot tr th, table tbody tr td, table tr td, table tfoot tr td {
-    display: table-cell;
-    line-height: 1.125em;
-}
-table, th, tr:first-child td {
-    font: normal 19px/1.4 sans-serif;
-    color: #6e6e6e;
-    font-size: 15px;
-}
-th, tr:first-child td {
-    font-weight: bold;
-}
-.icon-accordion {
-    display: none;
-}
-.content-box td h3 {
-    margin: 0;
-    padding: 0 0 5px 0;
-    display: none;
-    font-weight: bold;
-}
-@media (max-width: 764px) {
-    .content-box table, .content-box tbody, .content-box tr, .content-box td, .content-box th {
-        display: block;
-        width: 100%;
-    }
-    .content-box tr {
-        max-height: 60px;
-        overflow: hidden;
-        position: relative;
-        cursor: pointer;
-    }
-    .content-box td:first-child {
-        color: #ee8025;
-    }
-    .content-box tr:first-child td:first-child {
-        color: #6e6e6e;
-    }
-    .icon-accordion {
-        display: block;
-        color: #ee8025;
-        text-align: center;
-        width: 16px;
-        height: 16px;
-        position: absolute;
-        right: 15px;
-        top: 15px;
-        font-style: normal;
-        font-size: 1.6em;
-    }
-    .content-box td h3 {
-        display: block;
-    }
-}
 
 
 #weekPieceWork{
@@ -151,6 +33,9 @@ th, tr:first-child td {
 }
 #crewPieceWork{
   font-size: 27;
+}
+#addpiece{
+  display: none;
 }
 
 /* Variables
@@ -349,46 +234,7 @@ strong {
     display: none;
   }
 }
-/* Tab Styling
-==================================== */
-.Tablist {
-  display: flex;
-  flex-direction: row;
-  margin-left: -3px;
-}
-@media all and (min-width: 500px) {
-  .Tablist {
-    display: none;
-  }
-}
-.Tab {
-  padding: 0.6em 1em;
-  margin: 0 3px 3px 0;
-  text-align: center;
-  background-color: darkcyan;
-  border: solid 3px darkcyan;
-  border-bottom-width: 0;
-  border-radius: 0.5em 0.5em 0 0;
-  font-weight: bold;
-  color: #002525;
-  text-decoration: none;
-  transition: background-color 0.1s;
-  cursor: pointer;
-}
-.Tab:hover,
-.Tab:focus {
-  background-color: #199797;
-  border-color: #199797;
-  outline: none;
-}
-.Tab[aria-selected="false"]:active {
-  margin-top: 0.2em;
-  padding-bottom: 0.4em;
-}
-.Tab[aria-selected="true"] {
-  background: #e6f3f3;
-  cursor: default;
-}
+
 /* Accordion Styling
 ==================================== */
 .Accordion {
