@@ -190,78 +190,84 @@ submitEmployee.addEventListener('click', function newEmployeesubmit() {
 //   }
 //
 // }
+let tableRow = document.createElement('tr');
+tableRow.classList= "Rtable Rtable--12cols  js-RtableAccordions Rtable--collapse"
+tableRow.style.width = "100%";
+tableRow.setAttribute("id",row_id);
 
-let idd = document.createElement('div');
-let fName = document.createElement('div');
-let divSun = document.createElement('div');
-let divMon = document.createElement('div');
-let divTues = document.createElement('div');
-let divWed = document.createElement('div');
-let divThur = document.createElement('div');
-let divFri = document.createElement('div');
-let divSat = document.createElement('div');
-let divTotalPieces = document.createElement('div');
-let divRate = document.createElement('div');
-let divNetTotal = document.createElement('div');
+let idd = document.createElement('td');
+let fName = document.createElement('td');
+let divSun = document.createElement('td');
+let divMon = document.createElement('td');
+let divTues = document.createElement('td');
+let divWed = document.createElement('td');
+let divThur = document.createElement('td');
+let divFri = document.createElement('td');
+let divSat = document.createElement('td');
+let divTotalPieces = document.createElement('td');
+let divRate = document.createElement('td');
+let divNetTotal = document.createElement('td');
 content.appendChild(button);
-content.appendChild(idd);
+content.appendChild(tableRow)
+
+tableRow.appendChild(idd);
  idd.setAttribute("edit_type", "click");
  idd.setAttribute("class", 'Sun');
  idd.setAttribute('contenteditable', 'true');
  idd.classList="Rtable-cell row_data"
- content.appendChild(fName);
+ tableRow.appendChild(fName);
  fName.setAttribute("edit_type", "click");
  fName.setAttribute("class", 'Sun');
  fName.setAttribute('contenteditable', 'true');
  fName.classList="Rtable-cell row_data"
-  content.appendChild(divSun);
+  tableRow.appendChild(divSun);
 divSun.setAttribute("edit_type", "click");
 divSun.setAttribute("class", 'Sun');
 divSun.setAttribute('contenteditable', 'true');
 divSun.classList="Rtable-cell row_data"
 divSun.appendChild(employeeRate);
- content.appendChild(divMon);
+ tableRow.appendChild(divMon);
 divMon.setAttribute("edit_type", "click");
 divMon.setAttribute("class", 'Mon');
 divMon.setAttribute('contenteditable', 'true');
 divMon.classList="Rtable-cell row_data"
- content.appendChild(divTues);
+ tableRow.appendChild(divTues);
 divTues.setAttribute("edit_type", "click");
 divTues.setAttribute("class", 'tues');
 divTues.setAttribute('contenteditable', 'true');
 divTues.classList="Rtable-cell row_data"
- content.appendChild(divWed);
+ tableRow.appendChild(divWed);
 divWed.setAttribute("edit_type", "click");
 divWed.setAttribute("class", 'Wed');
 divWed.setAttribute('contenteditable', 'true');
 divWed.classList="Rtable-cell row_data"
- content.appendChild(divThur);
+ tableRow.appendChild(divThur);
 divThur.setAttribute("edit_type", "click");
 divThur.setAttribute("name", 'thurs');
 divThur.setAttribute('contenteditable', 'true');
 divThur.classList="Rtable-cell row_data";
- content.appendChild(divFri);
+ tableRow.appendChild(divFri);
 divFri.setAttribute("edit_type", "click");
 divFri.setAttribute("class", 'fri');
 divFri.setAttribute('contenteditable', 'true');
 divFri.classList="Rtable-cell row_data";
- content.appendChild(divSat);
+ tableRow.appendChild(divSat);
 divSat.setAttribute("edit_type", "click");
 divSat.setAttribute("class", 'sat');
 divSat.setAttribute('contenteditable', 'true');
 divSat.classList="Rtable-cell row_data";
- content.appendChild(divTotalPieces);
+ tableRow.appendChild(divTotalPieces);
 divTotalPieces.setAttribute("edit_type", "click");
 divTotalPieces.setAttribute("class", 'piece-total');
 divTotalPieces.setAttribute('contenteditable', 'true');
 divTotalPieces.classList="Rtable-cell row_data";
- content.appendChild(divRate);
+ tableRow.appendChild(divRate);
 divRate.setAttribute("edit_type", "click");
 divRate.setAttribute("class", 'rate');
 divRate.setAttribute('contenteditable', 'true');
 divRate.classList="Rtable-cell row_data";
 divRate.appendChild(employeeRate);
- content.appendChild(divNetTotal);
+ tableRow.appendChild(divNetTotal);
 divNetTotal.setAttribute("edit_type", "click");
 divNetTotal.setAttribute("class", 'netTotal');
 divNetTotal.setAttribute('contenteditable', 'true');
