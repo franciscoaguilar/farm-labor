@@ -41,7 +41,7 @@
     </div>
     <div class="form-group">
       <label for="exampleInputName2">Name</label>
-      <input type="text" id="nameInput" class="form-control" placeholder="jaun" value="jaun">
+      <input type="text" id="nameInput" class="form-control" placeholder="vic" value="vic">
     </div>
 
     <div class="form-group">
@@ -50,7 +50,7 @@
     </div>
     <button id="submitbutton" type="button" class="btn btn-default">Submit</button>
   </form>
-    <button id="submitPieceWorkTotal" type="button" class="btn btn-default">PieceWork</button>
+
   <div class="row">
       <div class="col-md-1">Id</div>
       <div class="col-md-1">Name</div>
@@ -66,15 +66,14 @@
       <div class="col-md-1"></div>
     </div>
 
-
   </div>
   <div class="form-group" id="addpiece">
     <label for="exampleInputName2">piece</label>
     <input type="text" name ="piece" id="pieceInput" class="form-control" placeholder="piece">
-    <input type="text" name = date id= "dateInput" class="form-control">
+    <input type="date" name = "datePiece" id= "dateInput" class="form-control">
     <button id="submitPieceWork" type="button" class="btn btn-default">ADD</button>
     <button id="newEmployee" type="button" class="btn btn-default">ADD NEW Employe</button>
-
+  <button id="submitPieceWorkTotal" type="button" class="btn btn-default">PieceWork</button>
 
   </div>
 
@@ -86,7 +85,7 @@
 
 
 
-  <table class=" js-RtableAccordions Rtable--collapse Rtable Rtable--12cols"  id= "content-box"  >
+  <table class=" js-RtableAccordions Rtable--collapse Rtable Rtable--12cols"  id= "table"  >
 
     <!-- <tr>
       <button class="Accordion" role="tab" aria-selected="false">Albert</button>
@@ -145,7 +144,7 @@
     <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div> -->
 
 
-  <!-- <div class=" js-RtableAccordions Rtable--collapse Rtable Rtable--12cols" >
+  <div class=" js-RtableAccordions Rtable--collapse Rtable Rtable--12cols" >
     <button class="Accordion" role="tab" aria-selected="false">Ryan</button>
     <div class="Rtable-cell  Rtable-cell--head">
       <h3>#27</h3></div>
@@ -160,7 +159,7 @@
                                     <div class="Rtable-cell">id: 56</div>
                                         <div class="Rtable-cell">id: 56</div>
 
-    <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div> -->
+    <div class="Rtable-cell  Rtable-cell--foot"><strong>08/24: 7</strong></div>
 
 
 </table>
@@ -169,7 +168,7 @@
   <div>Employees Current Piece Work: <span id="weekPieceWork">
             </span></div>
   <div>Crew Current Piece Work <span id="crewPieceWork"></span></div>
-
+ <div class ="post_msg"></div>
 
   <script src="js/scripts.js"></script>
 

@@ -1,9 +1,11 @@
+
 $(document).ready(function($) {
   "use strict";
   $.fn.responsiveTable = function() {
 
     var toggleColumns = function($table) {
       var selectedControls = [];
+
       $table.find(".Accordion, ").each(function() {
         selectedControls.push($(this).attr("aria-selected"));
       });
@@ -28,12 +30,15 @@ $(document).ready(function($) {
     });
 
   };
+}(jQuery));
+
+$(" .js-RtableAccordions").responsiveTable();
 
 class Employee {
-  constructor(employeeId, name, date) {
+  constructor(employeeId, name, startDate) {
     this._employeeId = employeeId;
     this._name = name;
-    this._date = date;
+    this._startDate = startDate;
   }
   get employeeId() {
     return this._employeeId;
@@ -41,8 +46,8 @@ class Employee {
   get name() {
     return this._name;
   }
-  get date() {
-    return this._date;
+  get startDate() {
+    return this._startDate;
   }
 }
 class EmployeePieceWork extends Employee {
@@ -89,7 +94,7 @@ class EmployeePieceWork extends Employee {
   //   foreach()
   // }
 }
-// class Crew extends Employee{
+// col_name Crew extends Employee{
 //   constructor(){
 //   super(netPayArray)
 // }
@@ -98,70 +103,85 @@ class EmployeePieceWork extends Employee {
 //   return netTotal;
 // }
 // }
-let george = new EmployeePieceWork('23', 'George', '2456', 45)
+let george = new EmployeePieceWork('23', 'Geo', '2456', 45)
 george.addPieceWork(5);
 george.addPieceWork(7);
 console.log(george)
 console.log(george.employeePieceWorkTotal(), 'piece work total');
 console.log(george.netPay(), 'netpay');
 
-
-let jaun = new EmployeePieceWork('45', 'jaun', '06/07', 2)
-jaun.addPieceWork(10);
-jaun.addPieceWork(10);
-jaun.addPieceWork(10);
-console.log(jaun);
-console.log(jaun.netPay(), 'jauns net pay');
-console.log(jaun.netPayArray, 'array');
-let crew = new Employee();
-console.log(jaun.pieceWork);
+function hey (){
+let jaun = new EmployeePieceWork('45', 'jaun', '06/07', 2);
+return jaun;
+}
+let holl = hey();
+holl.addPieceWork(10);
+holl.addPieceWork(10);
+holl.addPieceWork(10);
+console.log(holl);
+console.log(holl.netPay(), 'jauns net pay');
+console.log(holl.netPayArray, 'array');
+// let crew = new Employee();
+console.log(holl.pieceWork);
 console.log(george.pieceWork);
-console.log(jaun.pieceWork.concat(george.pieceWork).reduce((a, b) => a + b, 0), 'crew piece work total ');
-console.log(jaun.netPayArray.concat(george.netPayArray).reduce((a, b) => a + b, 0), 'crew net pay');
-console.log(jaun.pieceWork.reduce((a, b) => a + b, 0))
+console.log(holl.pieceWork.concat(george.pieceWork).reduce((a, b) => a + b, 0), 'crew piece work total ');
+console.log(holl.netPayArray.concat(george.netPayArray).reduce((a, b) => a + b, 0), 'crew net pay');
+console.log(holl.pieceWork.reduce((a, b) => a + b, 0))
 let name = document.getElementById('nameInput');
 let submitEmployee = document.getElementById('submitbutton');
 let employeeId = document.getElementById('idInput');
 let rate = document.getElementById('rateInput');
 let piece = document.getElementById('pieceInput');
+let pieceDate = document.getElementById('dateInput');
 let addPieceWorkButton = document.getElementById('submitPieceWork');
-let employee = new employete();
+// let employee = name.value;
 let submitPieceWorkTotal = document.getElementById('submitPieceWorkTotal')
 let crewPieceWork = [];
 let employees = [];
 let search = document.getElementById('search');
 let searchButton = document.getElementById('searchButton');
 let newEmployee = document.getElementById('newEmployee');
+let tableRows = [];
 
 function employete() {
   return name.value;
 }
 
 
-let content = document.getElementById("content-box");
+let table = document.getElementById("table");
 
-
-submitEmployee.addEventListener('click', function newEmployeesubmit() {
-
-  var random_id = function  ()
-{
-  var id_num = Math.random().toString(9).substr(2,3);
-  var id_str = Math.random().toString(36).substr(2);
-
-  return id_num + id_str;
+function getEmployeeDetails(){
+ this.employee = new EmployeePieceWork(employeeId.value, name.value, '09', rate.value);
+return this.employee;
 }
+var random_id = function  ()
+{
+var id_num = Math.random().toString(9).substr(2,3);
+var id_str = Math.random().toString(36).substr(2);
+
+return id_num + id_str;
+}
+
+submitEmployee.addEventListener('click', function () {
+
+
 	var row_id = random_id();
-  console.log(employee = new EmployeePieceWork(employeeId.value, name.value, '09', rate.value))
+
+  // console.log(let geo, 'just the name ');
+
+ let employee = getEmployeeDetails();
+    console.log(employee.employeeId, 'employeeId ');
   employees.push(employee);
   console.log(employees, 'list of employees');
   let id;
+  let tableRow = document.createElement('tr');
   let button = document.createElement('button');
   let p = document.createElement('p');
   let employeeIdNow = document.createTextNode(employee.employeeId);
   let employeeNameButton = document.createTextNode(employee.name);
   let employeeRate = document.createTextNode(employee.rate);
   let employeeName = document.createTextNode(employee.name);
-  button.classList = "Accordion";
+  button.classList = "Accordion buttons";
   button.setAttribute("role", "tab");
   button.setAttribute("aria-selected", "false");
   button.setAttribute("id", "buttons");
@@ -190,10 +210,10 @@ submitEmployee.addEventListener('click', function newEmployeesubmit() {
 //   }
 //
 // }
-let tableRow = document.createElement('tr');
+
 tableRow.classList= "Rtable Rtable--12cols  js-RtableAccordions Rtable--collapse"
 tableRow.style.width = "100%";
-tableRow.setAttribute("id",row_id);
+tableRow.setAttribute("row_id",row_id);
 
 let idd = document.createElement('td');
 let fName = document.createElement('td');
@@ -207,69 +227,71 @@ let divSat = document.createElement('td');
 let divTotalPieces = document.createElement('td');
 let divRate = document.createElement('td');
 let divNetTotal = document.createElement('td');
-content.appendChild(button);
-content.appendChild(tableRow)
+table.appendChild(button);
+table.appendChild(tableRow);
+
+
 
 tableRow.appendChild(idd);
  idd.setAttribute("edit_type", "click");
- idd.setAttribute("class", 'Sun');
+ idd.setAttribute("col_name", 'Sun');
  idd.setAttribute('contenteditable', 'true');
  idd.classList="Rtable-cell row_data"
  tableRow.appendChild(fName);
  fName.setAttribute("edit_type", "click");
- fName.setAttribute("class", 'Sun');
+ fName.setAttribute("col_name", 'fName');
  fName.setAttribute('contenteditable', 'true');
  fName.classList="Rtable-cell row_data"
   tableRow.appendChild(divSun);
 divSun.setAttribute("edit_type", "click");
-divSun.setAttribute("class", 'Sun');
+divSun.setAttribute("col_name", 'sun');
 divSun.setAttribute('contenteditable', 'true');
 divSun.classList="Rtable-cell row_data"
 divSun.appendChild(employeeRate);
  tableRow.appendChild(divMon);
 divMon.setAttribute("edit_type", "click");
-divMon.setAttribute("class", 'Mon');
+divMon.setAttribute("col_name", 'mon');
 divMon.setAttribute('contenteditable', 'true');
 divMon.classList="Rtable-cell row_data"
  tableRow.appendChild(divTues);
 divTues.setAttribute("edit_type", "click");
-divTues.setAttribute("class", 'tues');
+divTues.setAttribute("col_name", 'tues');
 divTues.setAttribute('contenteditable', 'true');
 divTues.classList="Rtable-cell row_data"
  tableRow.appendChild(divWed);
 divWed.setAttribute("edit_type", "click");
-divWed.setAttribute("class", 'Wed');
+divWed.setAttribute("col_name", 'wed');
 divWed.setAttribute('contenteditable', 'true');
 divWed.classList="Rtable-cell row_data"
  tableRow.appendChild(divThur);
 divThur.setAttribute("edit_type", "click");
-divThur.setAttribute("name", 'thurs');
+divThur.setAttribute("col_name", 'thurs');
 divThur.setAttribute('contenteditable', 'true');
 divThur.classList="Rtable-cell row_data";
  tableRow.appendChild(divFri);
 divFri.setAttribute("edit_type", "click");
-divFri.setAttribute("class", 'fri');
+divFri.setAttribute("col_name", 'fri');
 divFri.setAttribute('contenteditable', 'true');
 divFri.classList="Rtable-cell row_data";
  tableRow.appendChild(divSat);
 divSat.setAttribute("edit_type", "click");
-divSat.setAttribute("class", 'sat');
+divSat.setAttribute("col_name", 'sat');
 divSat.setAttribute('contenteditable', 'true');
 divSat.classList="Rtable-cell row_data";
  tableRow.appendChild(divTotalPieces);
 divTotalPieces.setAttribute("edit_type", "click");
-divTotalPieces.setAttribute("class", 'piece-total');
+divTotalPieces.setAttribute("col_name", 'piece-total');
 divTotalPieces.setAttribute('contenteditable', 'true');
 divTotalPieces.classList="Rtable-cell row_data";
  tableRow.appendChild(divRate);
 divRate.setAttribute("edit_type", "click");
-divRate.setAttribute("class", 'rate');
+divRate.setAttribute("col_name", 'rate');
 divRate.setAttribute('contenteditable', 'true');
 divRate.classList="Rtable-cell row_data";
 divRate.appendChild(employeeRate);
  tableRow.appendChild(divNetTotal);
 divNetTotal.setAttribute("edit_type", "click");
-divNetTotal.setAttribute("class", 'netTotal');
+divNetTotal.setAttribute("col_name", 'netTotal');
 divNetTotal.setAttribute('contenteditable', 'true');
 divNetTotal.classList="Rtable-cell row_data";
 
@@ -284,103 +306,119 @@ divRate.appendChild(employeeRate);
 // document.getElementsByName('rate')[0].appendChild(employeeRate);
 
     // $('rate')[0].appendChild(employeeRate);
-
-
-
+// setTableData();
+// console.log(tableData);
 
   hide_form(id);
   hide_pieceWork(id);
-  console.log(content, "inside");
 
 });
 
-function createEmployeeDivs(){
-
-}
 
 
 
-$(document).on('click', '#buttons', function() {
+// function getId(){
+//   let target = this.target;
+//   console.log(target);
+// }
+// tableRow.onclick = getId();
+
+$(document).on('click', '.buttons', function() {
+
   let id;
-  // $(this).attr("aria-selected", $(this).attr("aria-selected") !== "false");
   show_pieceWork(id);
-
-
 console.log('WORKING');
+let employee = getEmployeeDetails();
+console.log(employee.name);
 
-  // $(this).on("click", "#.Accordion", function() {
-  //   $(this).attr("aria-selected", $(this).attr("aria-selected") == "true" );
-  //   show_pieceWork(id);
-  // });
+
+
 
 });
-  console.log($(" .js-RtableAccordions"));
+
+
+
 function currentDate(month, day, year) {
   var todayTime = new Date();
-  var month = todayTime.getMonth() + 1;
-  var day = todayTime.getDate();
-  var year = todayTime.getYear();
-  return month + "/" + day + "/" + year;
+  // var month = todayTime.getMonth() + 1;
+  // var day = todayTime.getDate();
+  // var year = todayTime.getFullYear();
+  // return month + "/" + day + "/" + year;
+  return todayTime;
 }
-document.getElementById('dateInput').value = currentDate();
+// document.getElementById('dateInput').value = currentDate();
+
 
 
 
 addPieceWorkButton.addEventListener('click', function() {
   employee.addPieceWork(parseInt(piece.value));
+  employee.addPieceDate(parseInt(pieceDate.value));
+
   crewPieceWork.push(parseInt(piece.value));
-  console.log(crewPieceWork, 'inside');
+  console.log(crewPieceWork, 'crew pieceWork');
   // let div = document.createElement('div');
   // div.classList = "Rtable-cell";
 
 let employeePiece = document.createTextNode(piece.value);
+let employeePieceDate = document.createTextNode(pieceDate.value);
 // let employeePiece = piece.value;
 console.log(employeePiece);
-  placeDateOnAppropiateCell(employeePiece);
+  // placeDateOnAppropiateCell(employeePiece);
 
   console.log(employee.employeePieceWorkTotal(), 'piece wwork total');
   console.log(employee.netPay(), 'netpay');
+      console.log(employee.pieceWorkAndDate);
   piece.value = "";
+
 });
+
 // let thursday = $('.thurs')[0];
 
 
-function placeDateOnAppropiateCell(employeePiece) {
-  let sunday = $('div[name=sun]');
-  let monday = $('#mon')[0];
-  let tuesday = $('#tues')[0];
-  let wednesday = $('#wed')[0];
-  let thursday = document.getElementsByName('thurs');
- console.log(thursday);
-  let friday = $('#fri')[0];
-  let currentDay = new Date();
-  let day = currentDay.getDay();
-  switch (day) {
-    case 0:
-      sunday.appendChild(employeePiece);
-      break;
-    case 1:
-      break;
-      monday.appendChild(employeePiece);
-    case 2:
-      tuesday.appendChild(employeePiece);
-      break;
-    case 3:
-      wednesday.innerHTM = employeePiece;
-      break;
-    case 4:
-      thursday.appendChild(employeePiece);
-      break;
-    case 5:
-      friday.appendChild(employeePiece);
-      break;
-    case 6:
-      saturday.appendChild(employeePiece);
-      break;
-    default:
-      console.log('cant find');
-  }
-}
+// function placeDateOnAppropiateCell(employeePiece) {
+//
+// 		var row_id = $(this).closest('tr').attr('row_id');
+//
+//   let row_div = $(this);
+//   let sunday = row_div.attr('col_name');
+//   let monday = $('#mon')[0];
+//
+//   let tuesday = row_div.attr('col_name', 'tues');
+//   let wednesday = $('#wed')[0];
+//   // let thursday = document.getElementsByName('thurs');
+//
+//   let friday ;
+//   // let saturday = document.getElementById()
+//   let currentDay = currentDate();
+//   console.log(currentDay);
+//   let day = currentDay.getDay();
+//   switch (day) {
+//     case 0:
+//       sunday.appendChild(employeePiece);
+//       break;
+//     case 1:
+//       break;
+//       monday.appendChild(employeePiece);
+//     case 2:
+//       tuesday.appendChild(employeePiece);
+//       break;
+//     case 3:
+//       wednesday.innerHTMl = employeePiece;
+//       break;
+//     case 4:
+//       thursday.appendChild(employeePiece);
+//       break;
+//     case 5:
+//       friday
+//       break;
+//     case 6:
+//       saturday.appendChild(this.employeePiece);
+//       break;
+//     default:
+//       console.log('cant find');
+//   }
+// };
 
 
 console.log(crewPieceWork, 'array of the crews piece work ');
@@ -440,7 +478,32 @@ function show_form(id) {
   else
     e.style.display = 'block';
 }
+$(document).on('focusout', '.row_data', function(event) {
+  {
+		event.preventDefault();
 
+		if($(this).attr('edit_type') == 'button')
+		{
+			return false;
+		}
+
+		var row_id = $(this).closest('tr').attr('row_id');
+    var row_div = $(this)
+
+var col_name = row_div.attr('col_name');
+var col_val = row_div.html();
+console.log(col_name);
+var arr = {};
+arr[col_name] = col_val;
+console.log(arr);
+employee.addPieceWork(parseInt(col_val));
+console.log(employee.addPieceWork((col_val)));
+//use the "arr"	object for your ajax call
+$.extend(arr, {row_id:row_id});
+}
+console.log(row_id);
+	$('.post_msg').html( '<pre class="bg-success">'+JSON.stringify(arr, null, 2) +'</pre>');
+});
 
 
 
@@ -482,6 +545,4 @@ function show_form(id) {
 
 let row = document.querySelectorAll('tr');
 console.log(row);
-}(jQuery));
-
-$(" .js-RtableAccordions").responsiveTable();
+console.log(table);
