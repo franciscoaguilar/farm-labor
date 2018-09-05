@@ -30,7 +30,9 @@ $(document).ready(function($) {
     });
 
   };
+
 }(jQuery));
+
 
 $(" .js-RtableAccordions").responsiveTable();
 
@@ -50,13 +52,62 @@ class Employee {
     return this._startDate;
   }
 }
+// class EmployeePieceWork extends Employee {
+//   constructor(employeeId, name, date, rate) {
+//     super(employeeId, name, date)
+//     this._pieceWork = [];
+//     this._rate = rate;
+//     this._netPayArray = [];
+//     this._date = date;
+//
+//   }
+//   get pieceWork() {
+//     return this._pieceWork;
+//   }
+//   get rate() {
+//     return this._rate;
+//   }
+//   get netPayArray() {
+//     return this._netPayArray;
+//   }
+//   get date() {
+//     return this._date;
+//   }
+//   // get total(){
+//   //   return this._total;
+//   // }
+//   addPieceWork(newPieceWork) {
+//     this._pieceWork.push(newPieceWork);
+//   }
+//   get employeePieceWorkTotal() {
+//     return this._employeePieceWorkTotalotal;
+//   }
+//   employeePieceWorkTotal() {
+//     let total = this.pieceWork.reduce((a, b) => a + b, 0)
+//     return total;
+//   }
+//
+//   netPay() {
+//     let net = this.employeePieceWorkTotal() * this._rate;
+//     this._netPayArray.push(net);
+//     return net;
+//   }
+//   // totalNetPay(){
+//   //   foreach()
+//   // }
+// }
 class EmployeePieceWork extends Employee {
-  constructor(employeeId, name, date, rate) {
-    super(employeeId, name, date)
-    this._pieceWork = [];
+  constructor(employeeId, name, startDate, rate) {
+    super(employeeId, name, startDate)
+
+    this._startDate = startDate;
+    this._arrayDateAndPiece = []
+    this._pieceWork;
+    this._pieceDate;
     this._rate = rate;
     this._netPayArray = [];
-    this._date = date;
+
+
 
   }
   get pieceWork() {
@@ -68,31 +119,45 @@ class EmployeePieceWork extends Employee {
   get netPayArray() {
     return this._netPayArray;
   }
-  get date() {
-    return this._date;
+  get pieceDate() {
+    return this._pieceDatedate;
   }
-  // get total(){
-  //   return this._total;
-  // }
-  addPieceWork(newPieceWork) {
-    this._pieceWork.push(newPieceWork);
+  get arrayDateAndPiece(){
+    return this._arrayDateAndPiece;
   }
+
+  objDateAndPiece(pieceWork, pieceDate){
+    let a = {
+      pieceWork : pieceWork,
+      date :  pieceDate,
+    }
+
+    this._arrayDateAndPiece.push(a)
+  }
+ addPieceWork(newPieceWork) {
+    a.pieceWork = newPieceWork;
+  }
+  get total(){
+    return this._total;
+  }
+
   get employeePieceWorkTotal() {
     return this._employeePieceWorkTotalotal;
   }
   employeePieceWorkTotal() {
-    let total = this.pieceWork.reduce((a, b) => a + b, 0)
+    let total = this.objDateAndPiece.reduce((a, b) => a + b, 0)
     return total;
   }
+
 
   netPay() {
     let net = this.employeePieceWorkTotal() * this._rate;
     this._netPayArray.push(net);
     return net;
   }
-  // totalNetPay(){
-  //   foreach()
-  // }
+  totalNetPay(){
+    foreach()
+  }
 }
 // col_name Crew extends Employee{
 //   constructor(){
@@ -103,30 +168,30 @@ class EmployeePieceWork extends Employee {
 //   return netTotal;
 // }
 // }
-let george = new EmployeePieceWork('23', 'Geo', '2456', 45)
-george.addPieceWork(5);
-george.addPieceWork(7);
-console.log(george)
-console.log(george.employeePieceWorkTotal(), 'piece work total');
-console.log(george.netPay(), 'netpay');
-
-function hey (){
-let jaun = new EmployeePieceWork('45', 'jaun', '06/07', 2);
-return jaun;
-}
-let holl = hey();
-holl.addPieceWork(10);
-holl.addPieceWork(10);
-holl.addPieceWork(10);
-console.log(holl);
-console.log(holl.netPay(), 'jauns net pay');
-console.log(holl.netPayArray, 'array');
-// let crew = new Employee();
-console.log(holl.pieceWork);
-console.log(george.pieceWork);
-console.log(holl.pieceWork.concat(george.pieceWork).reduce((a, b) => a + b, 0), 'crew piece work total ');
-console.log(holl.netPayArray.concat(george.netPayArray).reduce((a, b) => a + b, 0), 'crew net pay');
-console.log(holl.pieceWork.reduce((a, b) => a + b, 0))
+// let george = new EmployeePieceWork('23', 'Geo', '2456', 45)
+// george.addPieceWork(5);
+// george.addPieceWork(7);
+// console.log(george)
+// console.log(george.employeePieceWorkTotal(), 'piece work total');
+// console.log(george.netPay(), 'netpay');
+//
+// function hey (){
+// let jaun = new EmployeePieceWork('45', 'jaun', '06/07', 2);
+// return jaun;
+// }
+// let holl = hey();
+// holl.addPieceWork(10);
+// holl.addPieceWork(10);
+// holl.addPieceWork(10);
+// console.log(holl);
+// console.log(holl.netPay(), 'jauns net pay');
+// console.log(holl.netPayArray, 'array');
+// // let crew = new Employee();
+// console.log(holl.pieceWork);
+// console.log(george.pieceWork);
+// console.log(holl.pieceWork.concat(george.pieceWork).reduce((a, b) => a + b, 0), 'crew piece work total ');
+// console.log(holl.netPayArray.concat(george.netPayArray).reduce((a, b) => a + b, 0), 'crew net pay');
+// console.log(holl.pieceWork.reduce((a, b) => a + b, 0))
 let name = document.getElementById('nameInput');
 let submitEmployee = document.getElementById('submitbutton');
 let employeeId = document.getElementById('idInput');
@@ -142,7 +207,13 @@ let search = document.getElementById('search');
 let searchButton = document.getElementById('searchButton');
 let newEmployee = document.getElementById('newEmployee');
 let tableRows = [];
-
+Array.prototype.sum = function (prop) {
+  var total = 0
+  for ( var i = 0, _len = this.length; i < _len; i++ ) {
+      total += this[i][prop]
+  }
+  return total
+}
 function employete() {
   return name.value;
 }
@@ -338,25 +409,31 @@ console.log(employee.name);
 
 
 
-function currentDate(month, day, year) {
-  var todayTime = new Date();
-  // var month = todayTime.getMonth() + 1;
-  // var day = todayTime.getDate();
-  // var year = todayTime.getFullYear();
-  // return month + "/" + day + "/" + year;
-  return todayTime;
-}
+// function currentDate(month, day, year) {
+//   var todayTime = new Date();
+//   // var month = todayTime.getMonth() + 1;
+//   // var day = todayTime.getDate();
+//   // var year = todayTime.getFullYear();
+//   // return month + "/" + day + "/" + year;
+//   return todayTime;
+// }
 // document.getElementById('dateInput').value = currentDate();
 
 
 
 
 addPieceWorkButton.addEventListener('click', function() {
-  employee.addPieceWork(parseInt(piece.value));
-  employee.addPieceDate(parseInt(pieceDate.value));
+  // employee.addPieceWork(parseInt(piece.value));
+  // employee.addPieceDate(parseInt(pieceDate.value));
+
+
+  employee.objDateAndPiece(parseInt(piece.value), pieceDate.value);
+  console.log(pieceDate.value);
+console.log(employee.arrayDateAndPiece);
 
   crewPieceWork.push(parseInt(piece.value));
   console.log(crewPieceWork, 'crew pieceWork');
+
   // let div = document.createElement('div');
   // div.classList = "Rtable-cell";
 
@@ -364,61 +441,84 @@ let employeePiece = document.createTextNode(piece.value);
 let employeePieceDate = document.createTextNode(pieceDate.value);
 // let employeePiece = piece.value;
 console.log(employeePiece);
-  // placeDateOnAppropiateCell(employeePiece);
 
-  console.log(employee.employeePieceWorkTotal(), 'piece wwork total');
-  console.log(employee.netPay(), 'netpay');
-      console.log(employee.pieceWorkAndDate);
+  placeDateOnAppropiateCell(employeePiece);
+
+  // console.log(employee.employeePieceWorkTotal(), 'piece wwork total');
+  let employeWeekTotal = employee.arrayDateAndPiece
+  console.log(employeWeekTotal.sum("pieceWork"), 'totalofcurrentemployee');
+  // console.log(employee.netPay(), 'netpay');
+  //     console.log(employee.pieceWorkAndDate);
+
+
   piece.value = "";
 
 });
 
-// let thursday = $('.thurs')[0];
 
 
-// function placeDateOnAppropiateCell(employeePiece) {
-//
-// 		var row_id = $(this).closest('tr').attr('row_id');
-//
-//   let row_div = $(this);
-//   let sunday = row_div.attr('col_name');
-//   let monday = $('#mon')[0];
-//
-//   let tuesday = row_div.attr('col_name', 'tues');
-//   let wednesday = $('#wed')[0];
-//   // let thursday = document.getElementsByName('thurs');
-//
-//   let friday ;
-//   // let saturday = document.getElementById()
-//   let currentDay = currentDate();
-//   console.log(currentDay);
-//   let day = currentDay.getDay();
-//   switch (day) {
-//     case 0:
-//       sunday.appendChild(employeePiece);
-//       break;
-//     case 1:
-//       break;
-//       monday.appendChild(employeePiece);
-//     case 2:
-//       tuesday.appendChild(employeePiece);
-//       break;
-//     case 3:
-//       wednesday.innerHTMl = employeePiece;
-//       break;
-//     case 4:
-//       thursday.appendChild(employeePiece);
-//       break;
-//     case 5:
-//       friday
-//       break;
-//     case 6:
-//       saturday.appendChild(this.employeePiece);
-//       break;
-//     default:
-//       console.log('cant find');
-//   }
-// };
+
+function placeDateOnAppropiateCell(employeePiece) {
+
+  var dateValue = new Date(pieceDate.value);
+  let dayNum = dateValue.getDay()+1;
+
+  if(dayNum == 7)
+   {
+     dayNum = 0;
+   }
+   else return;
+console.log(dayNum);
+  var weekDays = ["Sun","Mon","Tue","Wen","Thu","Fri","Sat"];
+  alert(weekDays[dayNum]);
+		var row_id = $(this).closest('tr').attr('row_id');
+
+  let row_div = $(this);
+  let sunday = row_div.attr('col_name');
+  let monday = $('#mon')[0];
+
+  let tuesday = row_div.attr('col_name', 'tues');
+  let wednesday = row_div.attr('col_name', 'wed');
+  // let thursday = document.getElementsByName('thurs');
+
+  let friday ;
+  // let saturday = document.getElementById()
+  // let currentD = document.getElementById('dateInput').value;
+  // console.log(currentD.UTC().FORMAT());
+
+  // let currentDay =   document.getElementById('dateInput').value
+  // // let currentD = parseInt(currentDay)
+  // console.log(currentDay);
+  // let d = currentDate();
+  // let day = d.getDay();
+  console.log('so');
+  console.log(dayNum);
+  switch (dayNum) {
+    case 0:
+      sunday.appendChild(employeePiece);
+      break;
+    case 1:
+      break;
+      monday.appendChild(employeePiece);
+    case 2:
+      tuesday.appendChild(employeePiece);
+      break;
+    case 3:
+      wednesday.appendChild(employeePiece);
+      break;
+    case 4:
+      thursday.appendChild(employeePiece);
+      break;
+    case 5:
+      friday
+      break;
+    case 6:
+      saturday.appendChild(this.employeePiece);
+      break;
+    default:
+      console.log('cant find');
+  }
+};
 
 
 console.log(crewPieceWork, 'array of the crews piece work ');
