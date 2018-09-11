@@ -134,9 +134,9 @@ class EmployeePieceWork extends Employee {
 
     this._arrayDateAndPiece.push(a)
   }
- addPieceWork(newPieceWork) {
-    a.pieceWork = newPieceWork;
-  }
+ // addPieceWork(newPieceWork) {
+ //    a.pieceWork = newPieceWork;
+ //  }
   get total(){
     return this._total;
   }
@@ -255,7 +255,8 @@ submitEmployee.addEventListener('click', function () {
   button.classList = "Accordion buttons";
   button.setAttribute("role", "tab");
   button.setAttribute("aria-selected", "false");
-  button.setAttribute("id", "buttons");
+  button.setAttribute("name", "buttons");
+
   button.appendChild(p);
   p.appendChild(employeeNameButton);
 
@@ -288,16 +289,16 @@ tableRow.setAttribute("row_id",row_id);
 
 let idd = document.createElement('td');
 let fName = document.createElement('td');
-let divSun = document.createElement('td');
-let divMon = document.createElement('td');
-let divTues = document.createElement('td');
-let divWed = document.createElement('td');
-let divThur = document.createElement('td');
-let divFri = document.createElement('td');
-let divSat = document.createElement('td');
-let divTotalPieces = document.createElement('td');
-let divRate = document.createElement('td');
-let divNetTotal = document.createElement('td');
+let tdSun = document.createElement('td');
+let tdMon = document.createElement('td');
+let tdTues = document.createElement('td');
+let tdWed = document.createElement('td');
+let tdThur = document.createElement('td');
+let tdFri = document.createElement('td');
+let tdSat = document.createElement('td');
+let tdTotalPieces = document.createElement('td');
+let tdRate = document.createElement('td');
+let tdNetTotal = document.createElement('td');
 table.appendChild(button);
 table.appendChild(tableRow);
 
@@ -313,62 +314,62 @@ tableRow.appendChild(idd);
  fName.setAttribute("col_name", 'fName');
  fName.setAttribute('contenteditable', 'true');
  fName.classList="Rtable-cell row_data"
-  tableRow.appendChild(divSun);
-divSun.setAttribute("edit_type", "click");
-divSun.setAttribute("col_name", 'sun');
-divSun.setAttribute('contenteditable', 'true');
-divSun.classList="Rtable-cell row_data"
-divSun.appendChild(employeeRate);
- tableRow.appendChild(divMon);
-divMon.setAttribute("edit_type", "click");
-divMon.setAttribute("col_name", 'mon');
-divMon.setAttribute('contenteditable', 'true');
-divMon.classList="Rtable-cell row_data"
- tableRow.appendChild(divTues);
-divTues.setAttribute("edit_type", "click");
-divTues.setAttribute("col_name", 'tues');
-divTues.setAttribute('contenteditable', 'true');
-divTues.classList="Rtable-cell row_data"
- tableRow.appendChild(divWed);
-divWed.setAttribute("edit_type", "click");
-divWed.setAttribute("col_name", 'wed');
-divWed.setAttribute('contenteditable', 'true');
-divWed.classList="Rtable-cell row_data"
- tableRow.appendChild(divThur);
-divThur.setAttribute("edit_type", "click");
-divThur.setAttribute("col_name", 'thurs');
-divThur.setAttribute('contenteditable', 'true');
-divThur.classList="Rtable-cell row_data";
- tableRow.appendChild(divFri);
-divFri.setAttribute("edit_type", "click");
-divFri.setAttribute("col_name", 'fri');
-divFri.setAttribute('contenteditable', 'true');
-divFri.classList="Rtable-cell row_data";
- tableRow.appendChild(divSat);
-divSat.setAttribute("edit_type", "click");
-divSat.setAttribute("col_name", 'sat');
-divSat.setAttribute('contenteditable', 'true');
-divSat.classList="Rtable-cell row_data";
- tableRow.appendChild(divTotalPieces);
-divTotalPieces.setAttribute("edit_type", "click");
-divTotalPieces.setAttribute("col_name", 'piece-total');
-divTotalPieces.setAttribute('contenteditable', 'true');
-divTotalPieces.classList="Rtable-cell row_data";
- tableRow.appendChild(divRate);
-divRate.setAttribute("edit_type", "click");
-divRate.setAttribute("col_name", 'rate');
-divRate.setAttribute('contenteditable', 'true');
-divRate.classList="Rtable-cell row_data";
-divRate.appendChild(employeeRate);
- tableRow.appendChild(divNetTotal);
-divNetTotal.setAttribute("edit_type", "click");
-divNetTotal.setAttribute("col_name", 'netTotal');
-divNetTotal.setAttribute('contenteditable', 'true');
-divNetTotal.classList="Rtable-cell row_data";
+  tableRow.appendChild(tdSun);
+tdSun.setAttribute("edit_type", "click");
+tdSun.setAttribute("col_name", 'sun');
+tdSun.setAttribute('contenteditable', 'true');
+tdSun.classList="Rtable-cell row_data"
+tdSun.appendChild(employeeRate);
+ tableRow.appendChild(tdMon);
+tdMon.setAttribute("edit_type", "click");
+tdMon.setAttribute("col_name", 'mon');
+tdMon.setAttribute('contenteditable', 'true');
+tdMon.classList="Rtable-cell row_data"
+ tableRow.appendChild(tdTues);
+tdTues.setAttribute("edit_type", "click");
+tdTues.setAttribute("col_name", 'tues');
+tdTues.setAttribute('contenteditable', 'true');
+tdTues.classList="Rtable-cell row_data"
+ tableRow.appendChild(tdWed);
+tdWed.setAttribute("edit_type", "click");
+tdWed.setAttribute("col_name", 'wed');
+tdWed.setAttribute('contenteditable', 'true')
+tdWed.classList="Rtable-cell row_data wed"
+ tableRow.appendChild(tdThur);
+tdThur.setAttribute("edit_type", "click");
+tdThur.setAttribute("col_name", 'thurs');
+tdThur.setAttribute('contenteditable', 'true');
+tdThur.classList="Rtable-cell row_data";
+ tableRow.appendChild(tdFri);
+tdFri.setAttribute("edit_type", "click");
+tdFri.setAttribute("col_name", 'fri');
+tdFri.setAttribute('contenteditable', 'true');
+tdFri.classList="Rtable-cell row_data";
+ tableRow.appendChild(tdSat);
+tdSat.setAttribute("edit_type", "click");
+tdSat.setAttribute("col_name", 'sat');
+tdSat.setAttribute('contenteditable', 'true');
+tdSat.classList="Rtable-cell row_data";
+ tableRow.appendChild(tdTotalPieces);
+tdTotalPieces.setAttribute("edit_type", "click");
+tdTotalPieces.setAttribute("col_name", 'piece-total');
+tdTotalPieces.setAttribute('contenteditable', 'true');
+tdTotalPieces.classList="Rtable-cell row_data";
+ tableRow.appendChild(tdRate);
+tdRate.setAttribute("edit_type", "click");
+tdRate.setAttribute("col_name", 'rate');
+tdRate.setAttribute('contenteditable', 'true');
+tdRate.classList="Rtable-cell row_data";
+tdRate.appendChild(employeeRate);
+ tableRow.appendChild(tdNetTotal);
+tdNetTotal.setAttribute("edit_type", "click");
+tdNetTotal.setAttribute("col_name", 'netTotal');
+tdNetTotal.setAttribute('contenteditable', 'true');
+tdNetTotal.classList="Rtable-cell row_data";
 
 idd.appendChild(employeeIdNow);
 fName.appendChild(employeeName);
-divRate.appendChild(employeeRate);
+tdRate.appendChild(employeeRate);
 //   let idd = document.getElementsByName('employeeId')[0];
 //
 //   idd.appendChild(employeeIdNow);
@@ -382,31 +383,63 @@ divRate.appendChild(employeeRate);
 
   hide_form(id);
   hide_pieceWork(id);
+  $('.buttons').on('click', function(){
+    event.preventDefault();
+    let id;
+      show_pieceWork(id);
+    // if($(this).name == '.buttons'){
+      console.log('event handler');
+      let r_id = $(this).next().attr('row_id');
+      console.log(r_id);
+
+
+  })
 
 });
 
 
 
 
-// function getId(){
-//   let target = this.target;
-//   console.log(target);
-// }
-// tableRow.onclick = getId();
-
-$(document).on('click', '.buttons', function() {
-
-  let id;
-  show_pieceWork(id);
-console.log('WORKING');
-let employee = getEmployeeDetails();
-console.log(employee.name);
 
 
+// $(document).on('click', '.buttons', function(event) {
+// event.preventDefault();
+//   let id;
+//   show_pieceWork(id);
+//
+//
+//
+// let row_id = $(this).find('tr').attr('row_id');
+// console.log($(this));
+// console.log(row_id);
+// });
 
-
-});
-
+// table.addEventListener('click', event =>{
+//   if(event.target.className == 'buttons'){
+//     console.log('event handler');
+//     let row_id = $(this).find('tr').attr('row_id');
+//   }
+// })
+// let $table = $('#table')[0];
+//
+// $table.addEventListener('click', event =>{
+//   event.preventDefault();
+//   let id;
+//     show_pieceWork(id);
+//   if(event.target.name == 'buttons'){
+//     console.log('event handler');
+//     let row_id = $(event.currentTarget).find('tr').attr('row_id');
+//       console.log( $(event.currentTarget));
+//       console.log(row_id);
+//     let id;
+//       show_pieceWork(id);
+//
+//   }
+//   else{
+//     console.log($table);
+//     console.log('not');
+//   }
+// })
 
 
 // function currentDate(month, day, year) {
@@ -442,6 +475,7 @@ let employeePieceDate = document.createTextNode(pieceDate.value);
 // let employeePiece = piece.value;
 console.log(employeePiece);
 
+  getDayNum();
   placeDateOnAppropiateCell(employeePiece);
 
   // console.log(employee.employeePieceWorkTotal(), 'piece wwork total');
@@ -452,33 +486,40 @@ console.log(employeePiece);
 
 
   piece.value = "";
+  // let date = document.getElementById('dateInput');
+
 
 });
 
-
-
-
-function placeDateOnAppropiateCell(employeePiece) {
-
-  var dateValue = new Date(pieceDate.value);
+function getDayNum(){
+  let dateValue = new Date(pieceDate.value);
   let dayNum = dateValue.getDay()+1;
 
   if(dayNum == 7)
    {
      dayNum = 0;
+     console.log(dayNum);
    }
-   else return;
-console.log(dayNum);
-  var weekDays = ["Sun","Mon","Tue","Wen","Thu","Fri","Sat"];
-  alert(weekDays[dayNum]);
-		var row_id = $(this).closest('tr').attr('row_id');
 
+
+  // var weekDays = ["Sun","Mon","Tue","Wen","Thu","Fri","Sat"];
+  // alert(dayNum);
+  // alert(weekDays[dayNum]);
+  return dayNum;
+}
+
+
+function placeDateOnAppropiateCell(employeePiece) {
+
+
+  let row_id = $(this).find('tr').attr('row_id');
   let row_div = $(this);
-  let sunday = row_div.attr('col_name');
-  let monday = $('#mon')[0];
 
-  let tuesday = row_div.attr('col_name', 'tues');
-  let wednesday = row_div.attr('col_name', 'wed');
+  let sunday = row_div.attr('col_name');
+  let monday = row_div.attr('col_name');
+  let tuesday = row_div.attr('col_name');
+  let wednesday = document.getElementsByClassName('wed')[0];
+  console.log(wednesday);
   // let thursday = document.getElementsByName('thurs');
 
   let friday ;
@@ -491,7 +532,9 @@ console.log(dayNum);
   // console.log(currentDay);
   // let d = currentDate();
   // let day = d.getDay();
-  console.log('so');
+  console.log(tuesday);
+  console.log(employeePiece);
+  let dayNum = getDayNum();
   console.log(dayNum);
   switch (dayNum) {
     case 0:
@@ -596,8 +639,8 @@ console.log(col_name);
 var arr = {};
 arr[col_name] = col_val;
 console.log(arr);
-employee.addPieceWork(parseInt(col_val));
-console.log(employee.addPieceWork((col_val)));
+employee.objDateAndPiece(parseInt(col_val));
+console.log(employee.objDateAndPiece((col_val)));
 //use the "arr"	object for your ajax call
 $.extend(arr, {row_id:row_id});
 }
